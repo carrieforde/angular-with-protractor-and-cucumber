@@ -2,12 +2,14 @@ Feature: Calculator
 
   A super calculator that performs operations on two numbers.
 
-  Scenario: Add two numbers
+  Scenario Outline: Add two numbers
     Given I have navigated to the calculator
-    When I add two numbers "1" and "2"
-    Then the displayed output should be "3"
+    When I add two numbers "<first>" and "<second>"
+    Then the displayed output should be "<result>"
 
-  Scenario: Add two numbers
-    Given I have navigated to the calculator
-    When I add two numbers "4" and "6"
-    Then the displayed output should be "10"
+    Examples:
+      | first | second | result |
+      | 1     | 2      | 3      |
+      | 4     | 6      | 10     |
+      | 13    | 13     | 26     |
+      | 234   | 4564   | 4798   |
