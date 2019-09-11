@@ -14,7 +14,7 @@ exports.config = {
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
-    require: ['./steps/*.**.ts']
+    require: ['./steps/timeout.ts', './steps/*.steps.ts']
   },
   onPrepare() {
     require('ts-node').register({
